@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klymchuk.Agency">
+
+    <select id="selectAgency" resultType="com.klymchuk.domain.Agency">
+        select ID, NAME from AGENCY where
+        id = #{id}
+    </select>
+
+    <update id="createTable">
+        CREATE TABLE AGENCY (ID INT PRIMARY KEY, NAME VARCHAR(50))
+    </update>
+    
+    <update id="seedAgency">
+        INSERT INTO AGENCY VALUES (10,'American family insurance')
+    </update>
+
+</mapper>
